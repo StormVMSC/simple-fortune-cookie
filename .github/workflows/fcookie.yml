@@ -32,10 +32,10 @@ jobs:
     - name: Backend Checkout
       uses: actions/checkout@v3
     - name: Backend Run
-      run: docker run .
+      run: docker run backend:v1.0
       working-directory: backend
     - name: Frontend Checkout
       uses: actions/checkout@v3
     - name: Frontend Run
-      run: docker run .
+      run: docker run frontend:v1.0
       working-directory: frontend
