@@ -21,4 +21,4 @@ jobs:
     runs-on: ubuntu-latest
     Tests:
       - name: Frontend
-      run: go test /frontend
+        run: go test /frontend
