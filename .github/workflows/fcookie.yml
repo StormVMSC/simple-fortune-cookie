@@ -1,13 +1,6 @@
 name: FCookie
 on: push
 jobs:
-  Clone-down:
-    name: Clone Down Repo
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Upload Repo
-
   Build:
     name: Build
     runs-on: ubuntu-latest
