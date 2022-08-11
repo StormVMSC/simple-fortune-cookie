@@ -19,23 +19,14 @@ jobs:
       - name: Backend Build
         run: docker build -t backend:v1.0 .
         working-directory: backend
+      - name: Backend Run
+        run: docker run backend:v1.0
+        working-directory: backend
       - name: Frontend Checkout
         uses: actions/checkout@v3
       - name: Frontend Build
         run: docker build -t frontend:v1.0 .
         working-directory: frontend
-  Run:
-    name: Run
-    runs-on: ubuntu-latest
-    needs: Build
-    steps:
-    - name: Backend Checkout
-      uses: actions/checkout@v3
-    - name: Backend Run
-      run: docker run backend:v1.0
-      working-directory: backend
-    - name: Frontend Checkout
-      uses: actions/checkout@v3
-    - name: Frontend Run
-      run: docker run frontend:v1.0
-      working-directory: frontend
+      - name: Frontend Run
+        run: docker run frontend:v1.0
+        working-directory: frontend
