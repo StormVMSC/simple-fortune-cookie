@@ -24,3 +24,18 @@ jobs:
       - name: Frontend Build
         run: docker build .
         working-directory: frontend
+  Run:
+    name: Run
+    runs-on: ubuntu-latest
+    needs: Build
+    steps:
+    - name: Backend Checkout
+      uses: actions/checkout@v3
+    - name: Backend Run
+      run: docker run .
+      working-directory: backend
+    - name: Frontend Checkout
+      uses: actions/checkout@v3
+    - name: Frontend Run
+      run: docker run .
+      working-directory: frontend
