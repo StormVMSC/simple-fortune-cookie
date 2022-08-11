@@ -12,14 +12,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Frontend Build
-        uses: go test
-        with:
-          path: frontend/.
       - name: Backend Build
-        uses: go test
-        with:
-          path: backend/.
+        run: go build backend/.
 
   Test:
     runs-on: ubuntu-latest
