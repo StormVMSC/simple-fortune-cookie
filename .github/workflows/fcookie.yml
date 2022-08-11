@@ -1,12 +1,26 @@
 name: FCookie
 on: push
 jobs:
-  Build:
-    name: Build
+  Test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Frontend Checkout
         uses: actions/checkout@v3
       - name: Frontend Test
         run: go test
+        working-directory: frontend
+  Build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Backend Checkout
+        uses: actions/checkout@v3
+      - name: Backend Build
+        run: go build .
+        working-directory: backend
+      - name: Frontend Checkout
+        uses: actions/checkout@v3
+      - name: Frontend Build
+        run: go build .
         working-directory: frontend
