@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Frontend Build
-        run: go build /frontend/.
+        run: go build frontend/.
       - name: Backend Build
-        run: go build /backend/.
+        run: go build backend/.
 
   Test:
     runs-on: ubuntu-latest
     steps:
       - name: Frontend
-        run: go test /frontend
+        run: go test frontend
