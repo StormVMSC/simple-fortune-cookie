@@ -8,6 +8,6 @@ RUN go mod download github.com/gomodule/redigo
 RUN CGO_ENABLED=0 GOOS=linux go build -o backend .
 
 FROM alpine:latest AS run
-COPY /app/backend ./
+COPY --from=build /app/backend ./
 EXPOSE 9000
 CMD ["./backend"]
