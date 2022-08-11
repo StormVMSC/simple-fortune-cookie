@@ -12,16 +12,13 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Frontend Build
         run: go build /frontend/.
-      - uses: actions/checkout@v2
       - name: Backend Build
         run: go build /backend/.
 
   Test:
     runs-on: ubuntu-latest
-    Tests:
-      - uses: actions/checkout@v2
+    steps:
       - name: Frontend
         run: go test /frontend
